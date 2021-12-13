@@ -69,7 +69,7 @@ const mongoose=require("mongoose")
  let favouriteCollection={}
 
  recipeCollection.getCollection=()=>{
-     return mongoose.connect("mongodb://127.0.0.1:27017/foodrecipe",{useNewUrlParser:true,useUnifiedTopology:true}).then(db=>{
+     return mongoose.connect("mongodb+srv://admin:admin123@cluster0.jdhr0.mongodb.net/foodrecipe?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true}).then(db=>{
         return db.model("recipe",recipeAccountSchema)
      }).catch((err)=>{
         let error=new Error("Could not connect to database")
@@ -79,8 +79,8 @@ const mongoose=require("mongoose")
 
  }
  ingredientCollection.getCollection=()=>{
-    return mongoose.connect("mongodb://127.0.0.1:27017/foodrecipe",{useNewUrlParser:true,useUnifiedTopology:true}).then(db=>{
-       return db.model("ingredients",ingredientsSchema)
+    return mongoose.connect("mongodb+srv://admin:admin123@cluster0.jdhr0.mongodb.net/foodrecipe?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true}).then(db=>{
+       return db.model("ingredient",ingredientsSchema)
     }).catch((err)=>{
        let error=new Error("Could not connect to database")
        error.status= 500;
@@ -89,8 +89,8 @@ const mongoose=require("mongoose")
 
 }
 favouriteCollection.getCollection=()=>{
-    return mongoose.connect("mongodb://127.0.0.1:27017/foodrecipe",{useNewUrlParser:true,useUnifiedTopology:true}).then(db=>{
-       return db.model("favourites",favouritesSchema)
+    return mongoose.connect("mongodb+srv://admin:admin123@cluster0.jdhr0.mongodb.net/foodrecipe?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true}).then(db=>{
+       return db.model("favourite",favouritesSchema)
     }).catch((err)=>{
        let error=new Error("Could not connect to database")
        error.status= 500;

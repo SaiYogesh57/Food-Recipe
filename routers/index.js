@@ -83,7 +83,7 @@ router.post("/addingredient",async (req,res)=>{
         console.error(error,"checkErr")
         next(error)
     }
-    console.log(addedRecipe,"checKHere")
+   
     
 })
 
